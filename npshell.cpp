@@ -169,12 +169,12 @@ void npshell::execute_cmd(){
             dup2(result_fds[1], STDOUT_FILENO);                   
             if(space_position == cmds.front().npos){                            
                 //commands without argument
-                if(execl(path.c_str(), cmd.c_str()) < 0) perror("error on exec");
+                if(execl(path.c_str(), cmd.c_str(), NULL) < 0) perror("error on exec");
             }
             else{
                 //commands with argument
                 argument = get_argument_from_string(cmds.front(), space_position);
-                if(execl(path.c_str(), cmd.c_str(), argument.c_str()) < 0) perror("error on exec");
+                if(execl(path.c_str(), cmd.c_str(), argument.c_str(), NULL) < 0) perror("error on exec");
             }            
             //close file descriptors
             close(previous_line_fds[0]);

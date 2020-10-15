@@ -21,10 +21,17 @@ This shell program also implement ">" operator to redirect standard output of la
 ### Command Format
 There must be a space between every command, argument, and operator. Special pipe is an exception, there should not be any spaces between "|" and "N".
 
+```
+command argument | command
+command argument |N
+```
+
 ### Usage
-1. ```git clone https://github.com/bchu7796/SimpleShell.git```
-2. ```cd SimpleShell```
-3. ```make```
+```
+git clone https://github.com/bchu7796/SimpleShell.git
+cd SimpleShell
+make
+```
 
 ### Reference
 NCTU CS - Network Programming 2018.
